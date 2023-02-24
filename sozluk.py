@@ -3,10 +3,17 @@ from tkinter import ttk
 
 file = open("list.txt","r",encoding="utf8")
 data = {}
-for i in range(1,10):
+while True:
     kelime = file.readline()
-    kelime = kelime.split("**")
-    data[kelime[0]] = kelime[1]
+    if kelime != "":
+        
+            kelime = kelime.split("**")
+            print(kelime)
+            data.update({kelime[0] : kelime[1]})
+            
+    else:
+         break        
+
     
 class App(tk.Tk):
     def __init__(self):
